@@ -14,10 +14,10 @@
                 if (uri) {
                     window.location.href = uri;
                     
-                    // 尝试在 1 秒后自动关闭这个中转网页
+                    // 尝试在 5 秒后自动关闭这个中转网页
                     setTimeout(function() {
                         window.close();
-                    }, 1000);
+                    }, 5000);
                 }
             } else {
                 document.body.innerHTML = "<h3>错误：链接格式不正确，缺少 '#' 和本地路径</h3>";

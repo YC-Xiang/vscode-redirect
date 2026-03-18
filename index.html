@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>正在打开 VS Code...</title>
+    <script>
+        window.onload = function() {
+            // 检查 URL 中是否包含 '#'
+            if (/#/.test(document.location.href)) {
+                // 提取 '#' 后面的内容
+                var uri = document.location.hash.replace(/^#/, "");
+                
+                // 执行重定向，唤起本地应用
+                if (uri) {
+                    window.location.href = uri;
+                    
+                    // 尝试在 1 秒后自动关闭这个中转网页
+                    setTimeout(function() {
+                        window.close();
+                    }, 1000);
+                }
+            } else {
+                document.body.innerHTML = "<h3>错误：链接格式不正确，缺少 '#' 和本地路径</h3>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <p>正在跳转，请允许浏览器打开 Visual Studio Code...</p>
+</body>
+</html>
